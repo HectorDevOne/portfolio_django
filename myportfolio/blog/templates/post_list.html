@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% content block %}
+<h1>Hector's Mind</h1>
+    {% if post_list %}
+    {% for post in post_list %}
+    <h2><a href="{% url 'posts:post_detail' post.id %}">{{ post.title }}</a></h2>
+    <p>{{ post.preview }}</p>
+    {% else %}
+    <p>There are not post to show yet.</p>
+    {% endif %}
+{% endblock %}

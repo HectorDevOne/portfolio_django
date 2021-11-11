@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views import View
+from django.views.generic import ListView
 
-class BlogIndex(View):
+class PostList(ListView):
     
     def get(self, request):
-        return render(request, template_name='blog_index.html')
+        return render(request, template_name='post_list.html')
